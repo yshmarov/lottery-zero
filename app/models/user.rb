@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:twitter, :github, :google_oauth2]
+         :omniauthable, omniauth_providers: [:github, :google_oauth2]
 
   has_many :charges
   has_many :bets
@@ -17,6 +17,10 @@ class User < ApplicationRecord
     update_column :bets_sum, (bets.map(&:weight).sum) 
     update_column :balance, (charges_sum - bets_sum + shares_won) 
     update_column :leader_score, (shares_won - bets_sum) 
+  end
+
+  def win_chance(roulette)
+    my_bet(roulette).weight.to_f / roulette.shares_total.to_f * 100
   end
 
   def my_bet(roulette)

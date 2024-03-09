@@ -19,7 +19,8 @@
       = current_user.my_bet(roulette).weight
       %br
       Win chance:
-      #{current_user.my_bet(roulette).weight}/#{roulette.shares_total}
+      = current_user.win_chance(roulette)
+      \%
   .card-footer
     - if roulette.active?
       = link_to gamble_roulette_path(roulette, weight: current_user.min_bettable(roulette)), method: :patch, class: "btn btn-md btn-success btn-block" do

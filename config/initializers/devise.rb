@@ -273,7 +273,6 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
-  config.omniauth :twitter, (Rails.application.credentials[:twitter][:id]).to_s, (Rails.application.credentials[:twitter][:secret]).to_s
   config.omniauth :github, (Rails.application.credentials[:github][:id]).to_s, (Rails.application.credentials[:github][:secret]).to_s, scope: "user"
   config.omniauth :google_oauth2, (Rails.application.credentials[:google][:id]).to_s, (Rails.application.credentials[:google][:secret]).to_s, {}
 
