@@ -15,6 +15,7 @@
     = stylesheet_link_tag :app, "data-turbo-track": "reload"
     = javascript_importmap_tags
     %link{crossorigin: "anonymous", href: "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css", integrity: "sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N", rel: "stylesheet"}/
+    %link{crossorigin: "anonymous", href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css", integrity: "sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==", referrerpolicy: "no-referrer", rel: "stylesheet"}/
   %body.bg-dark
     - if notice.present?
       .container-fluid.bg-success{:style => "position: absolute;"}
