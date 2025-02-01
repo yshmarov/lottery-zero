@@ -10,17 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_19_171122) do
-
+ActiveRecord::Schema[8.0].define(version: 2020_12_19_171122) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
 
   create_table "bets", force: :cascade do |t|
     t.integer "weight", default: 0, null: false
     t.bigint "roulette_id", null: false
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["roulette_id"], name: "index_bets_on_roulette_id"
     t.index ["user_id"], name: "index_bets_on_user_id"
   end
@@ -28,15 +27,15 @@ ActiveRecord::Schema.define(version: 2020_12_19_171122) do
   create_table "charges", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "amount"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_charges_on_user_id"
   end
 
   create_table "roulettes", force: :cascade do |t|
     t.integer "shares_total"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "shares_taken", default: 0, null: false
     t.integer "shares_available", default: 0, null: false
     t.integer "percent_left", default: 0, null: false
@@ -51,8 +50,8 @@ ActiveRecord::Schema.define(version: 2020_12_19_171122) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer "balance", default: 0, null: false
     t.integer "charges_count", default: 0, null: false
     t.integer "bets_count", default: 0, null: false
