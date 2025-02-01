@@ -1,0 +1,7 @@
+- if notice.present?
+  .container-fluid.bg-success{:style => "position: absolute;"}
+  %p.notice= notice
+- if alert.present?
+  .container-fluid.bg-warning
+  %p.alert= alert
+%br
