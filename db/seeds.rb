@@ -3,8 +3,7 @@ User.create(email: "student@example.com", password: "student@example.com", passw
 Roulette.create(shares_total: 10)
 Roulette.create(shares_total: 100)
 Roulette.create(shares_total: 1000)
-#Charge.create(user: User.first, amount: 100)
-#Charge.create(user: User.second, amount: 100)
-#Bet.create(roulette: Roulette.first, user: User.first, weight:3)
-#Bet.create(roulette: Roulette.first, user: User.second, weight:7)
-
+# Charge.create(user: User.first, amount: 100)
+# Charge.create(user: User.second, amount: 100)
+# Bet.create(roulette: Roulette.first, user: User.first, weight:3)
+# Bet.create(roulette: Roulette.first, user: User.second, weight:7)

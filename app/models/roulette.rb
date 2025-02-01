@@ -1,5 +1,4 @@
 class Roulette < ApplicationRecord
-
   has_many :bets
   belongs_to :user, required: false, counter_cache: true # winner
 
@@ -12,10 +11,10 @@ class Roulette < ApplicationRecord
     shares_total
   end
 
-  after_create do 
+  after_create do
     update_column :shares_available, shares_total
   end
-  
+
   def update_available_shares
     update_column :shares_taken, bets.map(&:weight).sum
     update_column :shares_available, (shares_total - shares_taken)
@@ -45,5 +44,4 @@ class Roulette < ApplicationRecord
   def sum_of_weights(weighted)
     weighted.inject(0) { |sum, (item, weight)| sum + weight }
   end
-
 end

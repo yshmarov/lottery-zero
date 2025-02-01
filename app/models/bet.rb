@@ -5,7 +5,7 @@ class Bet < ApplicationRecord
   validates_uniqueness_of :user_id, scope: :roulette_id
 
   validates :weight, presence: true
-  validates :weight, numericality: {greater_than: 0}
+  validates :weight, numericality: { greater_than: 0 }
 
   validate :weight_smaller_or_equal_to_roulette_shares_available
 
@@ -30,5 +30,4 @@ class Bet < ApplicationRecord
       errors.add(:weight, "can't be greater than your balance: #{user.balance}")
     end
   end
-
 end
