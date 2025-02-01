@@ -1,5 +1,4 @@
 class ChargesController < ApplicationController
-
   def new
     @charge = Charge.new
   end
@@ -10,10 +9,9 @@ class ChargesController < ApplicationController
 
     if @charge.save
       @charge.user.update_balance
-      redirect_to root_url, notice: 'Charge was successfully created.'
+      redirect_to root_url, notice: "Charge was successfully created."
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
-
 end

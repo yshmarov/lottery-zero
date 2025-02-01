@@ -1,7 +1,7 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.4.1'
+ruby "3.4.1"
 
 gem "rails", "~> 8.0.1"
 gem "propshaft"
@@ -31,7 +31,6 @@ end
 
 gem "devise"
 gem "haml-rails"
-gem "simple_form"
 gem "omniauth-github"
 gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection"
