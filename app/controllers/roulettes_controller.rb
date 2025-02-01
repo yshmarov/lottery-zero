@@ -1,8 +1,6 @@
 class RoulettesController < ApplicationController
-
-  def active
+  def index
     @roulettes = Roulette.active.order(shares_total: :asc)
-    render "index"
   end
 
   def finished
@@ -46,7 +44,7 @@ class RoulettesController < ApplicationController
       @bet.user.update_balance
 
       if @bet.roulette.shares_available.zero?
-        #Roulette.first.random_weighted(Roulette.first.bets.pluck(:user_id, :weight))
+        # Roulette.first.random_weighted(Roulette.first.bets.pluck(:user_id, :weight))
         weighted_random_winner = User.find_by(id: @roulette.random_weighted(@roulette.bets.pluck(:user_id, :weight)))
         # weighted_random_winner = User.first
         @roulette.update(user: weighted_random_winner)
@@ -58,5 +56,4 @@ class RoulettesController < ApplicationController
       end
     end
   end
-
 end

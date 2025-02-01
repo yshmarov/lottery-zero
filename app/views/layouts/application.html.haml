@@ -33,7 +33,7 @@
                 = current_user.balance
                 credits
           %p
-          = link_to "Roulettes", active_roulettes_path, class: "btn btn-sm btn-success"
+          = link_to "Roulettes", roulettes_path, class: "btn btn-sm btn-success"
           = link_to 'Buy credits', new_charge_path, class: "btn btn-sm btn-success"
           = link_to "Leaderboard", users_path, class: "btn btn-sm btn-primary"
           = link_to current_user.email, user_path(current_user), class: "btn btn-sm btn-secondary"
