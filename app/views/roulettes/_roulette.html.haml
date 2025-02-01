@@ -23,17 +23,17 @@
       \%
   .card-footer
     - if roulette.active?
-      = link_to gamble_roulette_path(roulette, weight: current_user.min_bettable(roulette)), method: :patch, class: "btn btn-md btn-success btn-block" do
+      = button_to gamble_roulette_path(roulette, weight: current_user.min_bettable(roulette)), method: :patch, class: "btn btn-md btn-success btn-block" do
         Bet #{pluralize(current_user.min_bettable(roulette), 'credit')} 
         %br
         %small
           (win chance: +#{current_user.min_bettable(roulette)}/#{roulette.shares_total})
-      = link_to gamble_roulette_path(roulette, weight: current_user.max_bettable(roulette)/2), method: :patch, class: "btn btn-md btn-success btn-block" do
+      = button_to gamble_roulette_path(roulette, weight: current_user.max_bettable(roulette)/2), method: :patch, class: "btn btn-md btn-success btn-block" do
         Bet #{pluralize(current_user.max_bettable(roulette)/2, 'credit')} 
         %br
         %small
           (win chance: +#{current_user.max_bettable(roulette)/2}/#{roulette.shares_total})
-      = link_to gamble_roulette_path(roulette, weight: current_user.max_bettable(roulette)), method: :patch, class: "btn btn-md btn-success btn-block" do
+      = button_to gamble_roulette_path(roulette, weight: current_user.max_bettable(roulette)), method: :patch, class: "btn btn-md btn-success btn-block" do
         Bet #{pluralize(current_user.max_bettable(roulette), 'credit')} 
         %br
         %small
