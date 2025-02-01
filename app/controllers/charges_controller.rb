@@ -1,17 +1,23 @@
 class ChargesController < ApplicationController
   def new
-    @charge = Charge.new
+    @charge = current_user.charges.new
   end
 
   def create
-    @charge = Charge.new(params.require(:charge).permit(:amount))
-    @charge.user = current_user
+    @charge = current_user.charges.new(charge_params)
 
     if @charge.save
-      @charge.user.update_balance
-      redirect_to root_url, notice: "Charge was successfully created."
+      flash[:success] = t(".success")
+      redirect_to root_url
     else
+      flash.now[:error] = t(".failure")
       render :new, status: :unprocessable_entity
     end
+  end
+
+  private
+
+  def charge_params
+    params.require(:charge).permit(:amount)
   end
 end

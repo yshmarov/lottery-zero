@@ -31,3 +31,7 @@
 
 en:
   hello: "Hello world"
+  charges:
+    create:
+      success: "Charge was successfully created."
+      failure: "Unable to process charge."
