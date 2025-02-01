@@ -6,8 +6,6 @@
 #
 one:
   email: "admin@example.com"
-  password: "password"
 
 two:
   email: "user@example.com"
-  password: "password"
